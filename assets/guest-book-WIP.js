@@ -204,3 +204,12 @@ subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fa
 function encodeHTML(sanizitedInput) {
     return sanizitedInput.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 }
+
+
+// Replace anything that gets past submit form
+
+ var rgx = new RegExp(swear_words_arr.join("|"), "gi");
+
+
+
+document.body.innerHTML = document.body.innerHTML.replace(rgx, "****");
