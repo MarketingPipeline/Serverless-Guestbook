@@ -1,5 +1,9 @@
 // Fetching Spreadsheet JSON Data
 
+ window.onload = fetchGuestBook_Entries();
+
+function fetchGuestBook_Entries(){
+
 fetch(
     `https://opensheet.elk.sh/${Google_Form_ID}/${Google_Form_Name}`
 )
@@ -18,6 +22,8 @@ fetch(
 		var splitTime =  sortedInput[i].Timestamp.split(' ')[0];
 		var splitTime_1 =  sortedInput[i].Timestamp.split(' ').pop();
 
+		
+		 // Work in Progress - Convert to 24 Hour
 		let ConvertedTime =  tConvert (splitTime_1)
 
 		document.getElementById("json").innerHTML += `
@@ -36,11 +42,18 @@ fetch(
 	/// Adding all entries to all entry section
 	
         data.forEach((row) => {
-			
+					var splitTime =  row.Timestamp.split(' ')[0];
+		var splitTime_1 =  row.Timestamp.split(' ').pop();
+
+		
+		 // Work in Progress - Convert to 24 Hour
+		let ConvertedTime =  tConvert (splitTime_1)
+					
+				
            document.getElementById("AllEntries_Content").innerHTML += `
 					 <div class="entry">
                 <div class="entry-info">
-                    <p><span class="author">${row.Name}</span> | <span class="date">${row.Timestamp}</span> | <span class="time">1:43 PM</span></p>
+                    <p><span class="author">${row.Name}</span> | <span class="date">${splitTime}</span> | <span class="time">${ConvertedTime}</span></p>
                 </div>
                 <div class="entry-text">
                     <p>${row.Guestbook_Entry}</p>
@@ -49,6 +62,9 @@ fetch(
           
         });
     });
+
+	
+}
 
 
 // On Submit - Validating Text Before Sending For Profanities
@@ -63,15 +79,8 @@ Gform.addEventListener('submit', (e) => {
 // https://stackoverflow.com/questions/13898423/javascript-convert-24-hour-time-of-day-string-to-12-hour-time-with-am-pm-and-no
 
 function tConvert (time) {
-  // Check correct time format and split into components
-  time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
-
-  if (time.length > 1) { // If time format correct
-    time = time.slice (1);  // Remove full string match value
-    time[5] = +time[0] < 12 ? 'AM' : 'PM'; // Set AM/PM
-    time[0] = +time[0] % 12 || 12; // Adjust hours
-  }
-  return time.join (''); // return adjusted time or original string
+  
+  return time; // return adjusted time or original string
 }
 
 
@@ -184,3 +193,4 @@ subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
   
 subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
 }
+
