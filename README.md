@@ -8,7 +8,7 @@
   
   
    
-  Don't forget to check out - <br> [Serverless-Forms: Free server-less forms templates with NO REDIRECTS powered by Google.](https://github.com/MarketingPipeline/Serverless-Forms)
+  Don't forget to check out - <br> [Serverless-Forms: Free serverless forms templates with NO REDIRECTS powered by Google.](https://github.com/MarketingPipeline/Serverless-Forms)
 
 </div>
 
@@ -32,19 +32,19 @@
 
 
 
-## Contributing ![GitHub](https://img.shields.io/github/contributors/MarketingPipeline/Serverless-Forms)
+## Contributing ![GitHub](https://img.shields.io/github/contributors/MarketingPipeline/Serverless-Guestbook)
 
-Want to help improve this [project](https://github.com/MarketingPipeline/Serverless-Forms/)? Create a pull request with your detailed changes! If approved you will be added to the list of contributors of this awesome [project](https://github.com/MarketingPipeline/Serverless-Forms/)!
+Want to help improve this [project](https://github.com/MarketingPipeline/Serverless-Guestbook/)? Create a pull request with your detailed changes! If approved you will be added to the list of contributors of this awesome [project](https://github.com/MarketingPipeline/Serverless-Guestbook/)!
 
 See also the list of
-[contributors](https://github.com/MarketingPipeline/Serverless-Forms/graphs/contributors) who
+[contributors](https://github.com/MarketingPipeline/Serverless-Guestbook/graphs/contributors) who
 participate in this project.
 
-## License <a href="https://github.com/MarketingPipeline/Serverless-Forms/blob/main/LICENSE"> <img alt="License: GPL-3.0" src="https://img.shields.io/github/license/MarketingPipeline/Serverless-Forms"></img></a>
+## License <a href="https://github.com/MarketingPipeline/Serverless-Guestbook/blob/main/LICENSE"> <img alt="License: GPL-3.0" src="https://img.shields.io/github/license/MarketingPipeline/Serverless-Guestbook"></img></a>
 
 
 This repo is licensed under the GPL-3.0 License - see the
-[LICENSE.md](https://github.com/MarketingPipeline/Serverless-Forms/blob/main/LICENSE) file for
+[LICENSE.md](https://github.com/MarketingPipeline/Serverless-Guestbook/blob/main/LICENSE) file for
 details.
 
 ## Acknowledgements 💙
