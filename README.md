@@ -3,7 +3,8 @@
 
 # Serverless-Guestbook
 <div align="center">
-A serverless guestbook hosted on Github Pages. Powered for free by Google.<br>
+ 
+<img height="400" src="https://i.imgur.com/g07tMfv.png"></img> 
  
 <b>Features</b>:<br>100% free, pure CSS form validation, profanity filter, lightweight, easy to setup & <br>
   easy to use!
@@ -17,7 +18,7 @@ A serverless guestbook hosted on Github Pages. Powered for free by Google.<br>
 ## Example and Usage
 - **Guestbook**  
   [Demo](https://marketingpip.github.io/Serverless-Guestbook/),
-   [How to Setup](https://github.com/Serverless-Guestbook/HOW_TO_USE.md)
+   [How to Setup](https://github.com/MarketingPipeline/Serverless-Guestbook/HOW_TO_USE.md)
     
 
  
