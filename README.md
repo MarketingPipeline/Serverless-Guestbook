@@ -27,7 +27,7 @@
 <details>
   <summary>Click to view photo preview</summary>
   <br>
-<img src="https://i.imgur.com/f24lES2.png"></img>
+<img src="https://i.imgur.com/eKIdy7l.png"></img>
 </details>
 
 
