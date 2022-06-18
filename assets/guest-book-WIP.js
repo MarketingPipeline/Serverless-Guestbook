@@ -26,12 +26,14 @@ fetch(
 		 // Work in Progress - Convert to 24 Hour
 		let ConvertedTime =  tConvert (splitTime_1)
 		
+		let SantizeName =  encodeHTML(sortedInput[i].Name)
+		
 		let SantizeResponses =  encodeHTML(sortedInput[i].Guestbook_Entry)
 
 		document.getElementById("json").innerHTML += `
 					 <div class="entry">
                 <div class="entry-info">
-                    <p><span class="author"> ${sortedInput[i].Name}.</span> | <span class="date">${splitTime}</span> | <span class="time">${ConvertedTime}</span></p>
+                    <p><span class="author"> ${SantizeName}.</span> | <span class="date">${splitTime}</span> | <span class="time">${ConvertedTime}</span></p>
                 </div>
                 <div class="entry-text">
                     <p>${SantizeResponses} </p>
@@ -47,6 +49,8 @@ fetch(
 		
 		
 		let SantizeResponses =  encodeHTML(row.Guestbook_Entry)
+		
+		let SantizeName =  encodeHTML(row.Name)
 					var splitTime =  row.Timestamp.split(' ')[0];
 		var splitTime_1 =  row.Timestamp.split(' ').pop();
 
@@ -58,7 +62,7 @@ fetch(
            document.getElementById("AllEntries_Content").innerHTML += `
 					 <div class="entry">
                 <div class="entry-info">
-                    <p><span class="author">${row.Name}</span> | <span class="date">${splitTime}</span> | <span class="time">${ConvertedTime}</span></p>
+                    <p><span class="author">${SantizeName}</span> | <span class="date">${splitTime}</span> | <span class="time">${ConvertedTime}</span></p>
                 </div>
                 <div class="entry-text">
                     <p>${SantizeResponses}</p>
