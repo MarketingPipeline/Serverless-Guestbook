@@ -56,7 +56,7 @@ Save these for later.
 
 Your Spreadsheet URL will look like this
 
-        https://docs.google.com/spreadsheets/d/1D_j6S1uoBJwvIlrO8T1vGdaFrmtww0pzKKGddpLjrGc/edit?usp=sharing
+        https://docs.google.com/spreadsheets/d/12dHNazq1AW04WG8DHy0-qKsqejpT6urRY0EgGRfPxdc/edit?usp=sharing
       
 the part that says "YOUR GOOGLE ID" will be your Google Form ID.  
 
