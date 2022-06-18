@@ -1,5 +1,7 @@
 # How To Setup Your Own Serveless Guestbook
 
+## After creating a template from this repo
+
 1. Go to Google Forms & Sign In
 
 2. Create a new form 
