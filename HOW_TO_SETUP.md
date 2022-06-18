@@ -28,15 +28,6 @@ Your google link will look something like this, save & copy it for later.
        
 
 
-<b>Form ID</b>:
-
-
-      
-the part that says "YOUR GOOGLE ID" will be your Google Form ID.  
-
-        https://docs.google.com/forms/d/e/YOUR FORM ID/viewform?usp=pp_url&entry.1008365156=a&entry.2012867003=a&entry.1854823009=a
-       
-     
 <b>Entry ID(s)</b>:
 
 The 3 "entry" value(s) after your form id
@@ -55,6 +46,21 @@ Save these for later.
 8. Once the spreadsheet has been created, make it PUBLIC & save the tab name at the bottom left corner
 
 ![image](https://user-images.githubusercontent.com/86180097/174425225-79e9a095-d241-4dba-91d4-cee0997f1940.png)
+
+9. Copy form ID from your spreadsheet public link
+
+
+<b>Form ID</b>:
+
+Your Spreadsheet URL will look like this
+
+        https://docs.google.com/spreadsheets/d/1D_j6S1uoBJwvIlrO8T1vGdaFrmtww0pzKKGddpLjrGc/edit?usp=sharing
+      
+the part that says "YOUR GOOGLE ID" will be your Google Form ID.  
+
+        https://docs.google.com/spreadsheets/d/YOUR ID/edit?usp=sharing
+       
+     
           
 9. Under line 67 in the file <code>index.html</code>
  
@@ -73,7 +79,7 @@ The first entry ID is "Name", second entry ID is "Email" & third is "Textarea"
 
 With your Google Form Link from earlier - change the final link from viewform? to formResponse?
 
-Then put your updated Google Form Link, Google Form ID & Form Name (Tab Name In Google Spreadsheets) to the corresponding variables. 
+Then put your updated Google Form Link, Google Spreadsheet Form ID & Form Name (Tab Name In Google Spreadsheets) to the corresponding variables. 
 
 Note: for any spaces in Tab Name, replace with "+". Example - Form Responses, becomes "Form+Responses".  
 
