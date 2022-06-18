@@ -216,4 +216,4 @@ function encodeHTML(sanizitedInput) {
 
 
 
-document.body.innerHTML = document.body.innerText.replace(rgx, "****");
+document.body.innerText.replace(rgx, "****");
