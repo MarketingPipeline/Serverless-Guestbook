@@ -30,6 +30,10 @@ fetch(
 		
 		let SantizeResponses =  encodeHTML(sortedInput[i].Guestbook_Entry)
 
+		// Dis-allow unicode comments for spam 
+		 SantizeName = SantizeName.replace(/[^\x00-\x7F]/g, "")
+		
+		SantizeResponses = SantizeResponses.replace(/[^\x00-\x7F]/g, "")
 		document.getElementById("json").innerHTML += `
 					 <div class="entry">
                 <div class="entry-info">
@@ -51,6 +55,12 @@ fetch(
 		let SantizeResponses =  encodeHTML(row.Guestbook_Entry)
 		
 		let SantizeName =  encodeHTML(row.Name)
+		
+		
+		// Dis-allow unicode comments for spam 
+		 SantizeName = SantizeName.replace(/[^\x00-\x7F]/g, "")
+		
+		SantizeResponses = SantizeResponses.replace(/[^\x00-\x7F]/g, "")
 					var splitTime =  row.Timestamp.split(' ')[0];
 		var splitTime_1 =  row.Timestamp.split(' ').pop();
 
