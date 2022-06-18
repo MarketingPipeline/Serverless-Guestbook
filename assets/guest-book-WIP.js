@@ -25,6 +25,8 @@ fetch(
 		
 		 // Work in Progress - Convert to 24 Hour
 		let ConvertedTime =  tConvert (splitTime_1)
+		
+		let SantizeResponses =  encodeHTML(sortedInput[i].Guestbook_Entry)
 
 		document.getElementById("json").innerHTML += `
 					 <div class="entry">
@@ -32,7 +34,7 @@ fetch(
                     <p><span class="author"> ${sortedInput[i].Name}.</span> | <span class="date">${splitTime}</span> | <span class="time">${ConvertedTime}</span></p>
                 </div>
                 <div class="entry-text">
-                    <p>${sortedInput[i].Guestbook_Entry} </p>
+                    <p>${SantizeResponses} </p>
                 </div>
             </div>`
 		
@@ -42,6 +44,9 @@ fetch(
 	/// Adding all entries to all entry section
 	
         data.forEach((row) => {
+		
+		
+		let SantizeResponses =  encodeHTML(row.Guestbook_Entry)
 					var splitTime =  row.Timestamp.split(' ')[0];
 		var splitTime_1 =  row.Timestamp.split(' ').pop();
 
@@ -56,7 +61,7 @@ fetch(
                     <p><span class="author">${row.Name}</span> | <span class="date">${splitTime}</span> | <span class="time">${ConvertedTime}</span></p>
                 </div>
                 <div class="entry-text">
-                    <p>${row.Guestbook_Entry}</p>
+                    <p>${SantizeResponses}</p>
                 </div>
             </div>`
           
@@ -194,3 +199,8 @@ subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
 subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
 }
 
+// XSS filter 
+
+function encodeHTML(sanizitedInput) {
+    return sanizitedInput.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+}
