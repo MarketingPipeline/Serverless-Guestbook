@@ -8,7 +8,7 @@
   
   
    
-  Don't forget to check out - <br> [Serverless-Forms: Free server-less forms templates with NO REDIRECTS powered by Google.](https://github.com/MarketingPip/Serverless-Mail-Form)
+  Don't forget to check out - <br> [Serverless-Forms: Free server-less forms templates with NO REDIRECTS powered by Google.](https://github.com/MarketingPipeline/Serverless-Forms)
 
 </div>
 
