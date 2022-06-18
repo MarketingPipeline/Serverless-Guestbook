@@ -16,37 +16,49 @@
 
 ![image](https://user-images.githubusercontent.com/86180097/174425028-f3d0aafa-de2c-4951-9fa7-147e92fa5d1c.png)
 
-6. Copy these values from your link for later
+6. Save / copy these values from your link for later
 
-Form ID:
+<b> Google Link</b>
 
-Your google link will look something like this
+Your google link will look something like this, save & copy it for later. 
 
        https://docs.google.com/forms/d/e/1FAIpQLSdUSoJ72_oCxwkGN4GCx8X1LntMvonrT1Gv0W8TwSWcf7no-g/viewform?usp=pp_url&entry.1008365156=a&entry.2012867003=a&entry.1854823009=a
        
-      
-the part that says "YOUR GOOGLE ID" will be your Google Link  
 
-              https://docs.google.com/forms/d/e/YOUR FORM ID/viewform?usp=pp_url&entry.1008365156=a&entry.2012867003=a&entry.1854823009=a
+
+<b>Form ID</b>:
+
+
+      
+the part that says "YOUR GOOGLE ID" will be your Google Form ID.  
+
+        https://docs.google.com/forms/d/e/YOUR FORM ID/viewform?usp=pp_url&entry.1008365156=a&entry.2012867003=a&entry.1854823009=a
        
      
-Entry ID(s):
+<b>Entry ID(s)</b>:
 
-The "entry" value(s) after your form id
+The 3 "entry" value(s) after your form id
 
-       entry.1008365156, entry.2012867003, entry.1854823009=a
-
-
+       entry.1008365156, entry.2012867003, entry.1854823009
 
 
-     
-     
+Save these for later. 
 
 
+7. Go back to your Google Form, press on "Responses" & "Create spreadsheet"
 
-Under line 67 in the file <code>index.html</code>
+![image](https://user-images.githubusercontent.com/86180097/174425184-aff8d5ad-ec6d-4496-8194-715a3570177f.png)
+
+
+8. Once the spreadsheet has been created, make it PUBLIC & save the tab name at the bottom left corner
+
+![image](https://user-images.githubusercontent.com/86180097/174425225-79e9a095-d241-4dba-91d4-cee0997f1940.png)
+          
+9. Under line 67 in the file <code>index.html</code>
  
 Put your Google Entry ID's you collected from earlier to the corresponding variables. 
+
+The first entry ID is "Name", second entry ID is "Email" & third is "Textarea"
 
       var GOOGLE_ENTRY_ID_Name="GUESTBOOK NAME FORM ID"; 
 		
@@ -55,9 +67,13 @@ Put your Google Entry ID's you collected from earlier to the corresponding varia
       var GOOGLE_ENTRY_ID_Guestbook="GUESTBOOK TEXT AREA FORM ID";
 
 
-Under line 74 in the same file <code>index.html</code>      
+9. Under line 74 in the same file <code>index.html</code>      
 
-Put your Google Form Link, Google Form ID & Form Name (Tab Name In Google Spreadsheets) to the corresponding variables. 
+With your Google Form Link from earlier - change the final link from viewform? to formResponse?
+
+Then put your updated Google Form Link, Google Form ID & Form Name (Tab Name In Google Spreadsheets) to the corresponding variables. 
+
+Note: for any spaces in Tab Name, replace with "+". Example - Form Responses, becomes "Form+Responses".  
 
 
 
@@ -66,3 +82,8 @@ Put your Google Form Link, Google Form ID & Form Name (Tab Name In Google Spread
 	  var Google_Form_ID="YOUR GOOGLE FORM ID HERE"  
 	 
 	  var Google_Form_Name="YOUR FORM NAME HERE"  
+
+
+10. Deploy to your hosting provider! Github Pages etc. 
+
+Enjoy! :) 
