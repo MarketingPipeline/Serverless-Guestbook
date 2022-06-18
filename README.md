@@ -1,6 +1,3 @@
-
-
-
 # Serverless-Guestbook
 <div align="center">
  
@@ -17,7 +14,7 @@
 
 ## Example and Usage
 - **Guestbook**  
-  [Demo](https://marketingpip.github.io/Serverless-Guestbook/),
+  [Demo](https://MarketingPipeline.github.io/Serverless-Guestbook/),
    [How to Setup](https://github.com/MarketingPipeline/Serverless-Guestbook/HOW_TO_USE.md)
     
 
@@ -35,19 +32,19 @@
 
 
 
-## Contributing ![GitHub](https://img.shields.io/github/contributors/MarketingPipeline/Python-In-The-Browser)
+## Contributing ![GitHub](https://img.shields.io/github/contributors/MarketingPipeline/Serverless-Forms)
 
-Want to help improve this [project](https://github.com/MarketingPipeline/Python-In-The-Browser/)? Create a pull request with your detailed changes! If approved you will be added to the list of contributors of this awesome [project](https://github.com/MarketingPipeline/Python-In-The-Browser/)!
+Want to help improve this [project](https://github.com/MarketingPipeline/Serverless-Forms/)? Create a pull request with your detailed changes! If approved you will be added to the list of contributors of this awesome [project](https://github.com/MarketingPipeline/Serverless-Forms/)!
 
 See also the list of
-[contributors](https://github.com/MarketingPipeline/Python-In-The-Browser/graphs/contributors) who
+[contributors](https://github.com/MarketingPipeline/Serverless-Forms/graphs/contributors) who
 participate in this project.
 
-## License <a href="https://github.com/MarketingPipeline/Python-In-The-Browser/blob/main/LICENSE"> <img alt="License: CC BY-NC 4.0" src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-orange.svg"></img></a>
+## License <a href="https://github.com/MarketingPipeline/Serverless-Forms/blob/main/LICENSE"> <img alt="License: GPL-3.0" src="https://img.shields.io/github/license/MarketingPipeline/Serverless-Forms"></img></a>
 
 
 This repo is licensed under the GPL-3.0 License - see the
-[LICENSE.md](https://github.com/MarketingPipeline/Python-In-The-Browser/blob/main/LICENSE) file for
+[LICENSE.md](https://github.com/MarketingPipeline/Serverless-Forms/blob/main/LICENSE) file for
 details.
 
 ## Acknowledgements 💙
