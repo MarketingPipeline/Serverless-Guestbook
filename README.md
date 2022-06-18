@@ -11,9 +11,8 @@ A serverless guestbook hosted on Github Pages. Powered for free by Google.<br>
 
 ## Example and Usage
 - **Guestbook**  
-  [Source](https://github.com/MarketingPipeline/Python-In-The-Browser/blob/main/demos/PyScript/adding_integers.html),
-  [Demo](https://marketingpip.github.io/Serverless-Mail-Form/Contact-Form/),
-   [How to Setup](https://marketingpip.github.io/Serverless-Mail-Form/Contact-Form/)
+  [Demo](https://marketingpip.github.io/Serverless-Guestbook/),
+   [How to Setup](https://github.com/Serverless-Guestbook/HOW_TO_USE.md)
     
 
  
@@ -41,7 +40,7 @@ participate in this project.
 ## License <a href="https://github.com/MarketingPipeline/Python-In-The-Browser/blob/main/LICENSE"> <img alt="License: CC BY-NC 4.0" src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-orange.svg"></img></a>
 
 
-This repo is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License - see the
+This repo is licensed under the GPL-3.0 License - see the
 [LICENSE.md](https://github.com/MarketingPipeline/Python-In-The-Browser/blob/main/LICENSE) file for
 details.
 
