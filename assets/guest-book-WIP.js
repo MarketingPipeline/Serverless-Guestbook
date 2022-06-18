@@ -1,3 +1,5 @@
+// Fetching Spreadsheet JSON Data
+
 fetch(
     `https://opensheet.elk.sh/${Google_Form_ID}/${Google_Form_Name}`
 )
@@ -7,16 +9,24 @@ fetch(
 	
 	// Add 5 entries to main page
 	      // ie; iterate 5 times
-	
-	for(var i = 0; i < 5 && i < data.length; i++){
+
+        // reversing JSON data to make things easier
+         let sortedInput = (data.reverse())
+             
+			 
+	for(var i = 0; i < 5 && i < sortedInput.length; i++){
+		var splitTime =  sortedInput[i].Timestamp.split(' ')[0];
+		var splitTime_1 =  sortedInput[i].Timestamp.split(' ').pop();
+
+		let ConvertedTime =  tConvert (splitTime_1)
 
 		document.getElementById("json").innerHTML += `
 					 <div class="entry">
                 <div class="entry-info">
-                    <p><span class="author"> ${data[i].Name}.</span> | <span class="date">${data[i].Timestamp}</span> | <span class="time">1:43 PM</span></p>
+                    <p><span class="author"> ${sortedInput[i].Name}.</span> | <span class="date">${splitTime}</span> | <span class="time">${ConvertedTime}</span></p>
                 </div>
                 <div class="entry-text">
-                    <p>${data[i].Guestbook_Entry} </p>
+                    <p>${sortedInput[i].Guestbook_Entry} </p>
                 </div>
             </div>`
 		
@@ -26,7 +36,7 @@ fetch(
 	/// Adding all entries to all entry section
 	
         data.forEach((row) => {
-					console.log(data)
+			
            document.getElementById("AllEntries_Content").innerHTML += `
 					 <div class="entry">
                 <div class="entry-info">
@@ -40,11 +50,32 @@ fetch(
         });
     });
 
+
+// On Submit - Validating Text Before Sending For Profanities
 var Gform = document.getElementById("gform")
 Gform.addEventListener('submit', (e) => {
   validate_text();
   
 })
+
+// Convert 24 hour timestamp to 12 hour format
+
+// https://stackoverflow.com/questions/13898423/javascript-convert-24-hour-time-of-day-string-to-12-hour-time-with-am-pm-and-no
+
+function tConvert (time) {
+  // Check correct time format and split into components
+  time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+
+  if (time.length > 1) { // If time format correct
+    time = time.slice (1);  // Remove full string match value
+    time[5] = +time[0] < 12 ? 'AM' : 'PM'; // Set AM/PM
+    time[0] = +time[0] % 12 || 12; // Adjust hours
+  }
+  return time.join (''); // return adjusted time or original string
+}
+
+
+
 		 
   var subscribeForm = document.getElementById("SendForm")
 
@@ -82,7 +113,7 @@ function validate_text()
  if(swear_alert_count>0)
  {
 	 
-		 
+	// if profanity is detected - show this message	 
 		 
   var subscribeForm = document.getElementById("SendForm")
  subscribeForm.setAttribute("style", "-webkit-animation: fadeOut 1s; animation: fadeOut 1s;  animation-fill-mode: forwards;");
@@ -101,6 +132,8 @@ subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fa
  }
  else
  {
+	 
+	 // if no profanities found - add to guestbook
   document.gform.submit();
 	 
 	   // Timeout is needed for form to properly submit with animation
@@ -121,6 +154,7 @@ subscribeForm.innerHTML = `	<a class="close" href="#">&times;</a>
 }
 window.onload=reset_alert_count;
 
+// After profanity message is shown - we need to reset it to allow user to try again
 
 function ResetSwearForm(){
 	
@@ -145,6 +179,7 @@ subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
 		</div>
 	</div>
 </div>
+
 `   
   
 subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
