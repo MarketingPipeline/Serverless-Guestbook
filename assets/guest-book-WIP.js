@@ -166,7 +166,17 @@ subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fa
  {
 	 
 	 // if no profanities found - add to guestbook
-  document.gform.submit();
+	 
+	   var response = grecaptcha.getResponse();
+    if (response.length === 0) {
+        
+   
+    } else {
+	
+      document.gform.submit();
+    
+    }
+
 	 
 	   // Timeout is needed for form to properly submit with animation
 	 
