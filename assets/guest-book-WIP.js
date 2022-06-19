@@ -232,7 +232,8 @@ subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
 		</div>
 	</div>
 </div>
-
+ <div class="g-recaptcha"
+       data-sitekey="${CaptchaKey}"></div>   
 `   
   
 subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
