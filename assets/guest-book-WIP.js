@@ -29,11 +29,6 @@ fetch(
 		let SantizeName =  encodeHTML(sortedInput[i].Name)
 		
 		let SantizeResponses =  encodeHTML(sortedInput[i].Guestbook_Entry)
-		
-		// Dis-allow unicode comments for spam 
-		 SantizeName = SantizeName.replace(/[^\x00-\x7F]/g, "")
-
-		SantizeResponses = SantizeResponses.replace(/[^\x00-\x7F]/g, "")
 
 		document.getElementById("json").innerHTML += `
 					 <div class="entry">
@@ -56,12 +51,6 @@ fetch(
 		let SantizeResponses =  encodeHTML(row.Guestbook_Entry)
 		
 		let SantizeName =  encodeHTML(row.Name)
-		
-		// Dis-allow unicode comments for spam 
-		 SantizeName = SantizeName.replace(/[^\x00-\x7F]/g, "")
-
-		SantizeResponses = SantizeResponses.replace(/[^\x00-\x7F]/g, "")
-		
 					var splitTime =  row.Timestamp.split(' ')[0];
 		var splitTime_1 =  row.Timestamp.split(' ').pop();
 
@@ -90,23 +79,9 @@ fetch(
 // On Submit - Validating Text Before Sending For Profanities
 var Gform = document.getElementById("gform")
 Gform.addEventListener('submit', (e) => {
-  validateRecaptcha();
-	
+  validate_text();
   
 })
-
-// Validate Recaptcha
-function validateRecaptcha() {
-    var response = grecaptcha.getResponse();
-    if (response.length === 0) {
-        
-        return false;
-    } else {
-	    // if Captcha Passed - Validate Text For Swearing Etc. 
-        validate_text();
-        return true;
-    }
-}
 
 // Convert 24 hour timestamp to 12 hour format
 
@@ -177,17 +152,7 @@ subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fa
  {
 	 
 	 // if no profanities found - add to guestbook
-	 
-	   var response = grecaptcha.getResponse();
-    if (response.length === 0) {
-        
-   
-    } else {
-	
-      document.gform.submit();
-    
-    }
-
+  document.gform.submit();
 	 
 	   // Timeout is needed for form to properly submit with animation
 	 
@@ -232,8 +197,6 @@ subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
 		</div>
 	</div>
 </div>
- <div class="g-recaptcha"
-       data-sitekey="${CaptchaKey}"></div>   
 `   
   
 subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
@@ -246,10 +209,3 @@ function encodeHTML(sanizitedInput) {
 }
 
 
-// Replace anything that gets past submit form
-
- var rgx = new RegExp(swear_words_arr.join("|"), "gi");
-
-
-
-document.body.innerText.replace(rgx, "****");
