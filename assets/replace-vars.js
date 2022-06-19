@@ -7,6 +7,10 @@ GuestBook.innerHTML = GuestBook.innerHTML
 	.replace(/GOOGLE_ENTRY_ID_Email/g, GOOGLE_ENTRY_ID_Email)
 	
 	.replace(/GOOGLE_ENTRY_ID_TextArea/g, GOOGLE_ENTRY_ID_Guestbook)
+
+        .replace(/GOOGLE_Captcha_Key/g, CaptchaKey)
+
+
 	
 
 	
