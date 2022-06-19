@@ -94,6 +94,14 @@ Note: for any spaces in Tab Name, replace with "+". Example - Form Responses, be
 	  var Google_Form_Name="YOUR FORM NAME HERE"  
 
 
-10. Deploy to your hosting provider! Github Pages etc. 
+
+10. Get a Recaptcha Key (V2) from Google & place your key Under line 97. 
+ 
+ 
+        // Google Recaptcha Key 
+      	 var CaptchaKey = "6LcmzH4gAAAAAAHKvR7hX8TkMcUsTlNzPU0m-U23" // put your Google Captcha Key here
+	
+	
+11. Deploy to your hosting provider! Github Pages etc. 
 
 Enjoy! :) 
