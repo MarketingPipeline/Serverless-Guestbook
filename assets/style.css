@@ -356,3 +356,9 @@ body {
     content: ' *';
     display:inline;
 }
+
+.max-length:after {
+    color: #e32;
+    content: "  *" " Max Length (50 Characters)";
+    display:inline;
+}
