@@ -167,6 +167,7 @@ function validate_text()
  {
 		 
   var subscribeForm = document.getElementById("SendForm")
+  var Gform = document.getElementById("gform")
   // Fade out form to make things look nice
  subscribeForm.setAttribute("style", "-webkit-animation: fadeOut 1s; animation: fadeOut 1s;  animation-fill-mode: forwards;");
 // Hide the input form values	 
