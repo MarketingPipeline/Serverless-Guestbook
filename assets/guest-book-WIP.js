@@ -224,7 +224,7 @@ function ResetSwearForm(){
  
 subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
 		<a class="close" href="#">&times;</a>
-		<div class="content"  style="height: 25em;overflow-y: auto;">
+		<div class="content">
       <label style="display: block;
     text-align: center;" class="aterisk_before" for="gform"> indicates a required field</label>
       <br>
@@ -235,12 +235,12 @@ subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
       
         <input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Name" id="GOOGLE_ENTRY_ID_Name" placeholder="John Doe." style="background: #5EC6C8;" required>
       
-        <label  class="aterisk_after" for="GOOGLE_ENTRY_ID_Email">GitHub Username</label>
+        <label for="GOOGLE_ENTRY_ID_Email">GitHub Username</label>
       
    
         <input class="form-element short" type="email" name="GOOGLE_ENTRY_ID_Email" id="GOOGLE_ENTRY_ID_Email" placeholder="MarketingPip" style="background: #5EC6C8;" required>
       
-   <label for="GOOGLE_ENTRY_ID_TextArea"  class="aterisk_after">Guestbook Entry (Max Length: 50 characters)</label>
+   <label for="GOOGLE_ENTRY_ID_TextArea"  class="max-length">Guestbook Entry</label>
       
       <textarea class="form-element" name="GOOGLE_ENTRY_ID_TextArea" id="GOOGLE_ENTRY_ID_TextArea" rows="5" cols="30" oninvalid="this.setCustomValidity('You must sign the guestbook')"
   oninput="this.setCustomValidity('')"  maxlength="50" placeholder="Enter Your Message Here" required></textarea>
