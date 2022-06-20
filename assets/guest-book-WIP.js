@@ -240,7 +240,7 @@ subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
         <label for="GOOGLE_ENTRY_ID_Email">GitHub Username</label>
       
    
-        <input class="form-element short" type="email" name="GOOGLE_ENTRY_ID_Email" id="GOOGLE_ENTRY_ID_Email" placeholder="MarketingPip" style="background: #5EC6C8;" required>
+        <input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Email" id="GOOGLE_ENTRY_ID_Email" placeholder="MarketingPip" style="background: #5EC6C8;">
       
    <label for="GOOGLE_ENTRY_ID_TextArea"  class="max-length">Guestbook Entry</label>
       
