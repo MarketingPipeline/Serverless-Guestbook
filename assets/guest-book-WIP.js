@@ -244,3 +244,4 @@ subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fa
 function encodeHTML(sanizitedInput) {
     return sanizitedInput.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 }
+
