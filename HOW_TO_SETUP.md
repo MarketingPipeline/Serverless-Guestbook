@@ -15,7 +15,8 @@
 
 4. To prevent spam / robots & XSS input on iFrame set rules for your form like so. 
 
-![image](https://user-images.githubusercontent.com/86180097/174510303-6bd9f0e5-8719-49f7-89da-7c8597c7387a.png)
+![image](https://user-images.githubusercontent.com/86180097/174516509-d4f5879c-0ec4-4d2d-a323-9249bb20d493.png)
+
 
 
 ![image](https://user-images.githubusercontent.com/86180097/174510199-1d136099-4c5b-483e-a42f-0b30b0aeed40.png)
@@ -113,14 +114,22 @@ Note: for any spaces in Tab Name, replace with "+". Example - Form Responses, be
 	
 	
 
-11. Go back to your spreadsheet, go to Extensions > then press "Script Editor"
+11. Go back to your spreadsheet, go to Extensions > then press "Script Editor" (OPTIONAL)
+
+Note - this step is OPTIONAL if you want to remove any inputs that get through with swear words etc.
 
 ![image](https://user-images.githubusercontent.com/86180097/174511021-8352e114-1872-4c38-879d-f4a99f05e865.png)
 
-12. Copy this script into <code>code.gs</code> & save the script.
+<br>
+Copy this script into <code>code.gs</code> & save the changes.
 
+<br>
+<br>
 <details>
 	<summary> Click to view the script</summary> 
+
+	
+	
 	
          function deleteMyRows() 
     {
@@ -149,10 +158,11 @@ Note: for any spaces in Tab Name, replace with "+". Example - Form Responses, be
 
 				 
 </details>  	
-	
+<br>
+Create a trigger for the function with this exact template
 
-14. Create a trigger for the function with this exact template
-
+<br>
+<br>
 <details>
 	<summary> Click to view trigger template</summary>
 	
@@ -164,8 +174,9 @@ Note: for any spaces in Tab Name, replace with "+". Example - Form Responses, be
 
 </details>
 	
+<br>
 
-15. Deploy to your hosting provider! Github Pages etc. 
+12. Deploy to your hosting provider! Github Pages etc. 
 
 Enjoy! :) 
 
