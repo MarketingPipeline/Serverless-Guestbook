@@ -9,7 +9,7 @@ body {
 }
  h1 {
 	 text-align: center;
-	 margin-top: 0em;
+	margin-top: 2em;
 }
  h3 {
 	 position: relative;
@@ -180,13 +180,14 @@ body {
 	 visibility: visible;
 	 opacity: 1;
 }
- .popup {
-	 height: min-content;
-	 margin: 0px auto;
+
+
+.popup {
+	 margin: 23px auto;
 	 padding: 20px;
 	 background: #fff;
 	 border-radius: 5px;
-	 width: fit-content;
+	 width: 30%;
 	 position: relative;
 	 transition: all 5s ease-in-out;
 }
@@ -220,6 +221,48 @@ body {
 		 width: 70%;
 	}
 }
+
+.sign-guest-book-popup {
+	 height: min-content;
+	 margin: 0px auto;
+	 padding: 20px;
+	 background: #fff;
+	 border-radius: 5px;
+	 width: fit-content;
+	 position: relative;
+	 transition: all 5s ease-in-out;
+}
+ .sign-guest-book-popup h2 {
+	 margin-top: 0;
+	 color: #333;
+	 font-family: Tahoma, Arial, sans-serif;
+}
+ .sign-guest-book-popup .close {
+	 position: absolute;
+	 top: 20px;
+	 right: 30px;
+	 transition: all 200ms;
+	 font-size: 30px;
+	 font-weight: bold;
+	 text-decoration: none;
+	 color: #333;
+}
+ .sign-guest-book-popup .close:hover {
+	 color: #06d85f;
+}
+ .sign-guest-book-popup .content {
+	 max-height: 30%;
+	 overflow: auto;
+}
+ @media screen and (max-width: 700px) {
+	 .box {
+		 width: 70%;
+	}
+	 .sign-guest-book-popup {
+		 width: 70%;
+	}
+}
+
  input:not([type="submit"]) {
 	 padding: 0.75rem;
 	 border-radius: 0.25rem;
