@@ -92,14 +92,14 @@ fetch(
 }
 
 
-$('#gform').submit(function (event) {
-    event.preventDefault()
-    var extraData = {}
-    // On Submit - Validating Text Before Sending For Profanities
-    validateRecaptcha();  
-    })
-})
 
+
+$('#gform').submit(function (event) {
+      event.preventDefault()
+    var extraData = {}
+        // On Submit - Validating Text Before Sending For Profanities
+    validateRecaptcha();  
+});
 
 
 
@@ -212,10 +212,10 @@ subscribeForm.innerHTML = `	<a class="close" href="#">&times;</a>
 <h1 style="text-align: center;
     margin-top: 2em;">Your Guestbook Entry Has Added! It will appear shortly!</h1> `   
   
-},500);
+},500); 
             // You can also redirect the user to a custom thank-you page:
             // window.location = 'http://www.mydomain.com/thankyoupage.html'
-        }
+        }})
     
     }
 
@@ -292,3 +292,26 @@ subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fa
 function encodeHTML(sanizitedInput) {
     return sanizitedInput.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 }
+   
+    // Replacing Variables At Top Of This Document
+  
+  var GuestBook = document.getElementById("GuestBook") ;
+GuestBook.innerHTML = GuestBook.innerHTML
+                        .replace(/GOOGLE_ENTRY_ID_Name/g, GOOGLE_ENTRY_ID_Name)
+	
+	.replace(/GOOGLE_ENTRY_ID_Email/g, GOOGLE_ENTRY_ID_Email)
+	
+	.replace(/GOOGLE_ENTRY_ID_TextArea/g, GOOGLE_ENTRY_ID_Guestbook)
+
+        .replace(/GOOGLE_Captcha_Key/g, CaptchaKey)
+
+
+	
+
+	
+	
+	
+	
+	
+                         .replace(/GOOGLE_FORM_URL/g, Google_Form_Link)
+  ;
