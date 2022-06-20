@@ -343,3 +343,16 @@ body {
 		 opacity: 1;
 	}
 }
+
+
+.aterisk_before:before {
+    color: #e32;
+    content: ' *';
+    display:inline;
+}
+
+.aterisk_after:after {
+    color: #e32;
+    content: ' *';
+    display:inline;
+}
