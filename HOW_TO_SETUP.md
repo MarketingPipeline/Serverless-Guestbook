@@ -95,13 +95,78 @@ Note: for any spaces in Tab Name, replace with "+". Example - Form Responses, be
 
 
 
-10. Get a Recaptcha Key (V2) from Google & place your key Under line 97. 
- 
- 
-        // Google Recaptcha Key 
-      	 var CaptchaKey = "6LcmzH4gAAAAAAHKvR7hX8TkMcUsTlNzPU0m-U23" // put your Google Captcha Key here
+10. Go back to the menu beside the "Send" button & press "Script Editor"
+
+<img src="https://i.imgur.com/4d3pVjX.png"></img>
+
+11. Copy this script & press run.
+
+<details>
+	<summary> Click to view the script</summary> 
 	
+    /**
+     * Updates the form field and its validation, placing a new CAPTCHA.
+     */
+    
+    var length = "" // Replace length with the number of characters you want in the Captcha Form
+    var id ="" // Replace id with the id of the form field that represents the Recapcha question
+    function updateCaptcha() {
+      var formulario = FormApp.getActiveForm(); // Get the current form
+    
+      var captcha = makeCaptcha(length); 
+    
+      var recaptcha = form.getItemById(id) 
+    
+      var textValidation = FormApp.createTextValidation() // Creates a validation object
+        .setHelpText('Invalid Code') // Configures the error text
+        .requireTextMatchesPattern(captcha) // Set a validation equivalent to Regular Expression with capcha text
+        .build(); // Build the Validation
+    
+    
+      recaptcha.asTextItem().setTitle('Please type: ' + captcha); // Changes the title of the field taking into account the Captcha
+      recaptcha.asTextItem().setValidation(textValidation); // Changes field validation
+    }
+    
+    /**
+     * Generates a new random string according to the variation of characters.
+     * @param {Number} length The desired length of the String
+     * @return {String} captcha A random string
+     */
+    function makeCaptcha(length) {
+      var captcha = ''; // Variable that will receive the string for captcha
+      var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'; // String array with the different characters used
+      var charactersLength = characters.length; // length of characters Array
+    
+      for (var i = 0; i < length; i++) {
+        captcha += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
+      return captcha;
+    }
+    /**
+     * Put in the records the name of all fields on the form followed by their IDs in the line below
+     */
+    function showIDs() {
+    
+    var form = FormApp.getActiveForm();
+    var items = form.getItems();
+    for (var i in items) { 
+      Logger.log(items[i].getTitle() + ': ' + items[i].getId());
+    }
+    }
+	showIDs()
+    
+
+				 
+A thank you to [thalesmacena (Thales Macena)](https://github.com/thalesmacena) for [Captcha-for-google-forms: Create a Captcha for Google Forms](https://github.com/thalesmacena/Captcha-for-google-forms)
+				 
+ <br><br><br>
+</details>  	
 	
-11. Deploy to your hosting provider! Github Pages etc. 
+
+12. After running - put your Captcha ID in the variable ("id") & your prefered captcha length in the variable ("length")
+	
+13. Press run again and then verify the form has changed to Captcha. 	
+	
+14. Deploy to your hosting provider! Github Pages etc. 
 
 Enjoy! :) 
