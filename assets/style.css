@@ -9,7 +9,7 @@ body {
 }
  h1 {
 	 text-align: center;
-	 margin-top: 2em;
+	 margin-top: 0em;
 }
  h3 {
 	 position: relative;
@@ -181,11 +181,12 @@ body {
 	 opacity: 1;
 }
  .popup {
-	 margin: 23px auto;
+	 height: min-content;
+	 margin: 0px auto;
 	 padding: 20px;
 	 background: #fff;
 	 border-radius: 5px;
-	 width: 30%;
+	 width: fit-content;
 	 position: relative;
 	 transition: all 5s ease-in-out;
 }
