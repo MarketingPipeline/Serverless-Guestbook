@@ -97,9 +97,8 @@ $('#gform').submit(function (event) {
    
 	   var response = grecaptcha.getResponse();
     if (response.length === 0) { // if Captcha is not complete
-        // do nothing
-     event.preventDefault()
-    var extraData = {}
+    ///
+    
     } else { 
   
     event.preventDefault()
