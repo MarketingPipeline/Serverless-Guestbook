@@ -13,7 +13,7 @@
 ![image](https://user-images.githubusercontent.com/86180097/174424940-a297dc26-3b50-4483-aa91-d06ba92ede6e.png)
 
 
-4. To prevent spam / robots & XSS input on iFrame set rules for your form like so. 
+4. To help prevent illegal XSS input on iFrame set rules for your form like so. 
 
 ![image](https://user-images.githubusercontent.com/86180097/174516509-d4f5879c-0ec4-4d2d-a323-9249bb20d493.png)
 
@@ -116,17 +116,20 @@ Note: for any spaces in Tab Name, replace with "+". Example - Form Responses, be
 
 11. Go back to your spreadsheet, go to Extensions > then press "Script Editor" (OPTIONAL)
 
-Note - this step is OPTIONAL if you want to remove any inputs that get through with swear words etc.
+Note - this step is OPTIONAL if you want to remove any inputs that get through via XSS input with swear words etc or that you don't want in general being shown.
 
 ![image](https://user-images.githubusercontent.com/86180097/174511021-8352e114-1872-4c38-879d-f4a99f05e865.png)
 
 <br>
 Copy this script into <code>code.gs</code> & save the changes.
 
+
 <br>
 <br>
 <details>
-	<summary> Click to view the script</summary> 
+	<summary> Click to view the script</summary>
+
+## Note: Add any extra words to "delA" that you want to be automatically removed from the Spreadsheet. 	
 
 	
 	
