@@ -10,7 +10,8 @@
 
 3. Follow this exact template
 
-![image](https://user-images.githubusercontent.com/86180097/174424940-a297dc26-3b50-4483-aa91-d06ba92ede6e.png)
+![image](https://user-images.githubusercontent.com/86180097/174526875-59e5d651-e3f0-4d5b-8417-1342cba98c2a.png)
+
 
 
 4. To help prevent illegal XSS input on iFrame set rules for your form like so. 
