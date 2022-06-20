@@ -205,7 +205,8 @@ Gform.setAttribute("style", "display:none;");
   
      // Show the user message their entry has been added
 subscribeForm.innerHTML = `	<a class="close" href="#">&times;</a>
-<h1>Your Guestbook Entry Has Added! It will appear shortly!</h1> `   
+<h1 style="text-align: center;
+    margin-top: 2em;">Your Guestbook Entry Has Added! It will appear shortly!</h1> `   
   
 },500);
  }
