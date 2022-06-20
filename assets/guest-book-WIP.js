@@ -170,7 +170,8 @@ function validate_text()
  Gform.setAttribute("style", "display:none;");  
  // Show the user this message + the illegal character they used.
 subscribeForm.innerHTML = `	<a class="close" onclick="ResetSwearForm();" href="#">&times;</a>
-<h1>Your message will not be added! \nThe following illegal words were found:</h1> <p>${alert_text}</p>`   
+<h1  style="text-align: center;
+    margin-top: 2em;">Your message will not be added! \nThe following illegal words were found:</h1> <p>${alert_text}</p>`   
   // Fade message in
 subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
 	 
