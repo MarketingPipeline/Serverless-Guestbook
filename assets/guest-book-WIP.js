@@ -94,16 +94,7 @@ fetch(
 $('#gform').submit(function (event) {
     event.preventDefault()
     var extraData = {}
-   
-	   var response = grecaptcha.getResponse();
-    if (response.length === 0) { // if Captcha is not complete
-    ///
-    
-    } else { 
-  
-    event.preventDefault()
-    var extraData = {}
-     $('#gform').ajaxSubmit({
+    $('#gform').ajaxSubmit({
         data: extraData,
         dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
         error: function () {
@@ -125,10 +116,15 @@ subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fa
             // window.location = 'http://www.mydomain.com/thankyoupage.html'
         }
     })
-    
-    }
 })
 
 function encodeHTML(sanizitedInput) {
     return sanizitedInput.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
 }
+
+
+function tConvert (time) {
+  
+  return time; // return adjusted time or original string
+}
+
