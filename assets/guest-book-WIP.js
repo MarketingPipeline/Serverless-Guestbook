@@ -92,13 +92,16 @@ fetch(
 }
 
 
-// On Submit - Validating Text Before Sending For Profanities
-var Gform = document.getElementById("gform")
-Gform.addEventListener('submit', (e) => {
-  validateRecaptcha();
-	
-  
+$('#gform').submit(function (event) {
+    event.preventDefault()
+    var extraData = {}
+    // On Submit - Validating Text Before Sending For Profanities
+    validateRecaptcha();  
+    })
 })
+
+
+
 
 // Validate Recaptcha
 function validateRecaptcha() {
@@ -188,14 +191,13 @@ subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fa
    
     } else { // add values to guestbook
 	
-      document.gform.submit();
-    
-    }
-
-	 
-	   // Timeout is needed for form to properly submit with animation
-	 
-	 setTimeout(function(){
+      $('#gform').ajaxSubmit({
+        data: extraData,
+        dataType: 'jsonp',  // This won't really work. It's just to use a GET instead of a POST to allow cookies from different domain.
+        error: function () {
+            // Submit of form should be successful but JSONP callback will fail because Google Forms
+            // does not support it, so this is handled as a failure.
+             setTimeout(function(){
    
 		 
 
@@ -210,6 +212,16 @@ subscribeForm.innerHTML = `	<a class="close" href="#">&times;</a>
     margin-top: 2em;">Your Guestbook Entry Has Added! It will appear shortly!</h1> `   
   
 },500);
+            // You can also redirect the user to a custom thank-you page:
+            // window.location = 'http://www.mydomain.com/thankyoupage.html'
+        }
+    
+    }
+
+	 
+	   // Timeout is needed for form to properly submit with animation
+	 
+	
  }
 }
 window.onload=reset_alert_count;
@@ -231,7 +243,7 @@ subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
     text-align: center;" class="aterisk_before" for="gform"> indicates a required field</label>
       <br>
 		
-    <form name="gform" id="gform" enctype="text/plain" action="GOOGLE_FORM_URL" target="hidden_iframe" onsubmit="submitted=true;">
+    <form name="gform" id="gform" enctype="text/plain" action="GOOGLE_FORM_URL" target="_self" method="POST" onsubmit="submitted=true;">
       
        <label for="GOOGLE_ENTRY_ID_Name"  class="aterisk_after">Name </label>
       
@@ -246,6 +258,17 @@ subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
       
       <textarea class="form-element" name="GOOGLE_ENTRY_ID_TextArea" id="GOOGLE_ENTRY_ID_TextArea" rows="5" cols="30" oninvalid="this.setCustomValidity('You must sign the guestbook')"
   oninput="this.setCustomValidity('')"  maxlength="50" placeholder="Enter Your Message Here" required></textarea>
+  
+  	    
+    <input type="hidden" name="fvv" value="1">
+    <input type="hidden" name="fbzx" value="8894643359802339470">
+    <!--
+        CAVEAT: In multipages (multisection) forms, *pageHistory* field tells to google what sections we've currently completed.
+        This usually starts as "0" for the first page, then "0,1" in the second page... up to "0,1,2..N" in n-th page.
+        Keep this in mind if you plan to change this code to recreate any sort of multipage-feature in your exported form.
+        We're setting this to the total number of pages in this form because we're sending all fields from all the section together.
+    -->
+    <input type="hidden" name="pageHistory" value="0">
       
          <label for="g-recaptcha"  class="aterisk_after">Captcha</label>      
 	 <div class="g-recaptcha"
