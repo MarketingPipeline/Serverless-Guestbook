@@ -231,30 +231,25 @@ subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
     text-align: center;" class="aterisk_before" for="gform"> indicates a required field</label>
       <br>
 		
-    <form name="gform" id="gform" enctype="text/plain" action="${Google_Form_Link}" target="hidden_iframe">
-    
-    
-    
-    
-     
-  
-    
-       <label for="${GOOGLE_ENTRY_ID_Name}"  class="aterisk_after">Name </label>
+    <form name="gform" id="gform" enctype="text/plain" action="GOOGLE_FORM_URL" target="hidden_iframe" onsubmit="submitted=true;">
       
-        <input class="form-element short" type="text" name="${GOOGLE_ENTRY_ID_Name}" id="${GOOGLE_ENTRY_ID_Name}" placeholder="John Doe." style="background: #5EC6C8;" required>
+       <label for="GOOGLE_ENTRY_ID_Name"  class="aterisk_after">Name </label>
       
-        <label for="${GOOGLE_ENTRY_ID_Email}">GitHub Username</label>
+        <input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Name" id="GOOGLE_ENTRY_ID_Name" placeholder="John Doe." style="background: #5EC6C8;" required>
+      
+        <label for="GOOGLE_ENTRY_ID_Email">GitHub Username</label>
       
    
-        <input class="form-element short" type="text" name="${GOOGLE_ENTRY_ID_Email}" id="${GOOGLE_ENTRY_ID_Email}" placeholder="MarketingPip" style="background: #5EC6C8;">
+        <input class="form-element short" type="email" name="GOOGLE_ENTRY_ID_Email" id="GOOGLE_ENTRY_ID_Email" placeholder="MarketingPip" style="background: #5EC6C8;" required>
       
-   <label for="${GOOGLE_ENTRY_ID_Guestbook}"  class="max-length">Guestbook Entry</label>
+   <label for="GOOGLE_ENTRY_ID_TextArea"  class="max-length">Guestbook Entry</label>
       
-      <textarea class="form-element" name="${GOOGLE_ENTRY_ID_Guestbook}" id="${GOOGLE_ENTRY_ID_Guestbook}" rows="5" cols="30" oninvalid="this.setCustomValidity('You must sign the guestbook')"
+      <textarea class="form-element" name="GOOGLE_ENTRY_ID_TextArea" id="GOOGLE_ENTRY_ID_TextArea" rows="5" cols="30" oninvalid="this.setCustomValidity('You must sign the guestbook')"
   oninput="this.setCustomValidity('')"  maxlength="50" placeholder="Enter Your Message Here" required></textarea>
       
          <label for="g-recaptcha"  class="aterisk_after">Captcha</label>      
-  
+	 <div class="g-recaptcha"
+       data-sitekey="GOOGLE_Captcha_Key"></div>   
       
         <input class="form-button" type="submit" value="Submit">
         <input class="form-button" type="reset" value="Reset Form">
@@ -263,10 +258,6 @@ subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
 		</div>
 	</div>
 </div> 
-
-</div>
- <div class="g-recaptcha"
-       data-sitekey="${CaptchaKey}"></div>   
 `   
   
 subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
