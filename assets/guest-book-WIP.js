@@ -217,6 +217,8 @@ window.onload=reset_alert_count;
 // After profanity message is shown - we need to reset it to allow user to try again
 
     /// ie : Reset form after showing user message of violation
+var subscribeForm = document.getElementById("SendForm")
+
 function ResetSwearForm(){
 	
 			 
@@ -254,9 +256,8 @@ subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
   oninput="this.setCustomValidity('')"  maxlength="50" placeholder="Enter Your Message Here" required></textarea>
       
          <label for="g-recaptcha"  class="aterisk_after">Captcha</label>      
-           
-	    <div class="g-recaptcha"
-       data-sitekey="${CaptchaKey}"></div>  
+   <div class="g-recaptcha"
+       data-sitekey="${CaptchaKey}"></div> 
       
         <input class="form-button" type="submit" value="Submit">
         <input class="form-button" type="reset" value="Reset Form">
@@ -266,7 +267,8 @@ subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
 	</div>
 </div> 
 </div>
- 
+     
+	     
 `   
   
 subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
