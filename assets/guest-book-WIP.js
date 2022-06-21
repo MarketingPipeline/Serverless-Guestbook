@@ -162,7 +162,7 @@ function validate_text()
 	// if profanity is detected - show this message	 	
  if(swear_alert_count>0)
  {
-		 
+	grecaptcha.reset();	 
   var subscribeForm = document.getElementById("SendForm")
   // Fade out form to make things look nice
  subscribeForm.setAttribute("style", "-webkit-animation: fadeOut 1s; animation: fadeOut 1s;  animation-fill-mode: forwards;");
