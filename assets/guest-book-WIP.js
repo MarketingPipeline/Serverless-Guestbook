@@ -217,51 +217,38 @@ window.onload=reset_alert_count;
 // After profanity message is shown - we need to reset it to allow user to try again
 
     /// ie : Reset form after showing user message of violation
+// After profanity message is shown - we need to reset it to allow user to try again
+
 function ResetSwearForm(){
 	
+	
 			 
-                      // Fade out form to make things look nice
+
  subscribeForm.setAttribute("style", "-webkit-animation: fadeOut 1s; animation: fadeOut 1s;  animation-fill-mode: forwards;");
  
  
 subscribeForm.innerHTML = ` <h1>Sign The Guestbook</h1>
 		<a class="close" href="#">&times;</a>
 		<div class="content">
-      <label style="display: block;
-    text-align: center;" class="aterisk_before" for="gform"> indicates a required field</label>
-      <br>
 		
-    <form name="gform" id="gform" enctype="text/plain" action="GOOGLE_FORM_URL" target="hidden_iframe" onsubmit="submitted=true;">
-      
-       <label for="GOOGLE_ENTRY_ID_Name"  class="aterisk_after">Name </label>
-      
-        <input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Name" id="GOOGLE_ENTRY_ID_Name" placeholder="John Doe." style="background: #5EC6C8;" required>
-      
-        <label for="GOOGLE_ENTRY_ID_Email">GitHub Username</label>
-      
-   
-        <input class="form-element short" type="text" name="GOOGLE_ENTRY_ID_Email" id="GOOGLE_ENTRY_ID_Email" placeholder="MarketingPip" style="background: #5EC6C8;">
-      
-   <label for="GOOGLE_ENTRY_ID_TextArea"  class="max-length">Guestbook Entry</label>
-      
-      <textarea class="form-element" name="GOOGLE_ENTRY_ID_TextArea" id="GOOGLE_ENTRY_ID_TextArea" rows="5" cols="30" oninvalid="this.setCustomValidity('You must sign the guestbook')"
+    <form name="gform" id="gform" enctype="text/plain" action="${Google_Form_Link}" target="hidden_iframe" onsubmit=" validate_text();">
+        <input class="form-element short" type="text" name="${GOOGLE_ENTRY_ID_Name}" id="${GOOGLE_ENTRY_ID_Name}" placeholder="Full Name" style="background: #5EC6C8;" required>
+        <input class="form-element short" type="email" name="${GOOGLE_ENTRY_ID_Email}" id="${GOOGLE_ENTRY_ID_Email}" placeholder="Email Address" style="background: #5EC6C8;" required>
+        <textarea class="form-element" name="${GOOGLE_ENTRY_ID_Guestbook}" id="${GOOGLE_ENTRY_ID_Guestbook}" rows="5" cols="30" oninvalid="this.setCustomValidity('You must sign the guestbook')"
   oninput="this.setCustomValidity('')"  maxlength="50" placeholder="Enter Your Message Here" required></textarea>
-      
-         <label for="g-recaptcha"  class="aterisk_after">Captcha</label>      
-	 <div class="g-recaptcha"
-       data-sitekey="GOOGLE_Captcha_Key"></div>   
-      
-        <input class="form-button" type="submit" value="Submit">
+        <input class="form-button" type="submit"  value="Submit">
         <input class="form-button" type="reset" value="Reset Form">
- 
     </form>
 		</div>
 	</div>
-</div> 
+</div>
+ <div class="g-recaptcha"
+       data-sitekey="${CaptchaKey}"></div>   
 `   
   
 subscribeForm.setAttribute("style", "-webkit-animation: fadeIn 1s; animation: fadeIn 1s;  animation-fill-mode: forwards;");  
 }
+
 
 // Santize Input - Basic XSS filter 
 
